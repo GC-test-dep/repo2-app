@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "04:00"
+    registries:
+      - github-packages
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "com.example:repo1-lib"
+        update-types: ["version-update:semver-major"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+registries:
+  github-packages:
+    type: "github-packages"
+    url: "https://maven.pkg.github.com/GC-test-dep"
+    token: "${{secrets.DEPENDABOT_TOKEN}}"
