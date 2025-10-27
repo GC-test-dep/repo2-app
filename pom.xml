@@ -30,7 +30,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.example</groupId>
+            <groupId>org.example</groupId>
             <artifactId>repo1-lib</artifactId>
             <version>0.0.1</version>
         </dependency>
