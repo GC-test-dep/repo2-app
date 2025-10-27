@@ -8,9 +8,15 @@ updates:
     registries:
       - github-packages
     open-pull-requests-limit: 5
+    # optional: labels you want Dependabot to add
+    labels:
+      - "dependencies"
+      - "dependabot"
+    # example ignore rule (optional)
     ignore:
       - dependency-name: "com.example:repo1-lib"
         update-types: ["version-update:semver-major"]
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -18,6 +24,7 @@ updates:
 
 registries:
   github-packages:
-    type: "github-packages"
+    type: "maven-repository"
     url: "https://maven.pkg.github.com/GC-test-dep"
+    # token must reference a Dependabot secret (created in the Dependabot secrets section)
     token: "${{secrets.DEPENDABOT_TOKEN}}"
