@@ -6,7 +6,7 @@ updates:
       interval: "daily"
       time: "04:00"
     registries:
-      - github-packages
+      - "github-packages"
     open-pull-requests-limit: 5
     # optional: labels you want Dependabot to add
     labels:
