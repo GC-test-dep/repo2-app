@@ -6,19 +6,13 @@ updates:
       interval: "daily"
       time: "04:00"
     registries:
-      - github-packages
+      - "github-packages"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
-      - "dependabot"
-    ignore:
-      - dependency-name: "com.example:repo1-lib"
-        update-types: ["version-update:semver-major"]
+    allow:
+      - dependency-name: "org.example:repo1-lib"
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
 
 registries:
   github-packages:
